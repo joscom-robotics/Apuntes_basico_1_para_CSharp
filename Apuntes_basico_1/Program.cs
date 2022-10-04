@@ -84,8 +84,6 @@ if(num < consUno)
 {
     Console.WriteLine("El número es menor a la constante.");
 }
-
-
 #endregion
 
 ///Operadores lógicos.
