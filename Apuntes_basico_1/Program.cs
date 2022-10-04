@@ -2,6 +2,7 @@
 Console.WriteLine("Hello World ejercicios básicos en Sharp!");
 Console.WriteLine("Esta sección abarca sentencias básicas de escritura y lectura en C#.");
 
+Console.Title = "Notas de C# básico.";
 
 #region Comentarios
 ///Creando un tipo de región plegable.
@@ -31,6 +32,7 @@ bool? nulable = null; ///Agregando un ? puede aceptar valor nulo pudiendo cambia
 int? numero_2 = null; ///Puede ser nulo pero posteriormente recibe un valor.
 #endregion
 
+///Tipos anonimos:
 Console.WriteLine("\nTipos anónimos:");
 #region Tipos anónimos.
 var clientes = new[]
@@ -45,6 +47,7 @@ foreach (var cl in clientes)
 }
 #endregion
 
+///Tuplas:
 Console.WriteLine("\nTuplas:");
 #region Tuplas
 var cliente = (Nombre: "Fernando", Apellido: "Martinez");
@@ -71,7 +74,7 @@ Console.WriteLine("Multiplicación: " + multip);
 Console.WriteLine("\nOperadores relacionales básicos: ");
 #region Operadores relacionales básicos:
 Console.WriteLine("\nIngresa un número entero.");
-int num = Int32.Parse(Console.ReadLine());
+int num = Int32.Parse(Console.ReadLine()); ///Lee números ingresados por teclado.
 if(consUno == num)
 {
     Console.WriteLine("El número es igual a la constante.");
@@ -95,5 +98,40 @@ String O = "||";
 Console.WriteLine("El opetradore lógico para condicional AND es: "+ Y);
 Console.WriteLine("El opetradore lógico para condicional OR es: " + O);
 #endregion
-//Console.ReadKey();
 
+///Control de errores con try-Catch:
+Console.WriteLine("\nControl de errores con try-Catch:");
+#region Control de errores:
+Console.WriteLine("Ingresa otro número con error para probar Try_Catch.");
+try
+{
+    int numIng = Int32.Parse(Console.ReadLine());
+}
+catch(System.FormatException ae)
+{
+    Console.WriteLine("El error es: "+ae);
+}
+#endregion
+
+///Desechar excepción: Throw:
+Console.WriteLine("\nDesechar excepción: Throw:");
+#region Desechar excepción: Throw.
+Console.WriteLine("Ingresa otro número con error para probar Desechar excepción: Throw.");
+try
+{
+    int numIng = Int32.Parse(Console.ReadLine());
+}
+catch (System.FormatException ae)
+{
+    if(ae.Message == null)
+    {
+        throw;
+    }
+    else
+    {
+        Console.WriteLine("El error es: " + ae.Message);
+    }
+}
+#endregion
+
+//Console.ReadKey();
