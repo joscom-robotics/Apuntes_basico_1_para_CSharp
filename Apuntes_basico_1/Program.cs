@@ -67,6 +67,7 @@ int multip = consUno * consDos;
 Console.WriteLine("Multiplicación: " + multip);
 #endregion
 
+///Operadores relacionales básicos.
 Console.WriteLine("\nOperadores relacionales básicos: ");
 #region Operadores relacionales básicos:
 Console.WriteLine("\nIngresa un número entero.");
